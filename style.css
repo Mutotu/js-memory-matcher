@@ -1,0 +1,33 @@
+h1 {
+  color: red;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  /* Height with vh means here %100 available space */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* vmin scales accoidng to the size */
+section {
+  display: grid;
+  grid-template-columns: repeat(6, 18vmin);
+  grid-template-rows: repeat(4, 18vmin);
+  gap: 0.5vmin;
+}
+
+/* This selects the div elements */
+section > div {
+  border: 1vmin solid grey;
+}
+button {
+  margin-top: 2vmin;
+}
+
+.ovelay {
+  visibility: hidden;
+}
