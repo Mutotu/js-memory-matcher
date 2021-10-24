@@ -126,7 +126,7 @@ const IMAGES = [
 let h2 = document.querySelector("h2");
 let h3 = document.querySelector("h3");
 let section = document.querySelector("section");
-section.addEventListener("click", () => console.log(section));
+// section.addEventListener("click", () => console.log(section));
 const playBt = document.querySelector("button");
 const sectionAll = document.querySelector("section");
 let sectionEls = Array.from(document.querySelectorAll("section > div"));
@@ -135,6 +135,7 @@ let placeImages;
 let indexCollector = [];
 let counter = 0;
 let countTime = 0;
+let moves = 1;
 function init() {
   placeImages = randomPhotoGenerator(copyImages);
   function randomPhotoGenerator(array) {
@@ -171,9 +172,11 @@ function init() {
     }
   }
   function checkMatch() {
+    score();
     if (indexCollector.length === 2) {
       let item1 = document.getElementById(indexCollector[0]);
       let item2 = document.getElementById(indexCollector[1]);
+      moves++;
 
       if (item1.getAttribute("name") === item2.getAttribute("name")) {
         counter++;
@@ -191,11 +194,9 @@ function init() {
   }
 
   function score() {
-    if (counter === placeImages.length / 2) {
-      h2.innerText = "Your score is somethin";
-    }
+    h2.innerText = `You have made  ${moves} moves`;
   }
-
+  section.addEventListener("click", timer);
   function timer() {
     let time = setInterval(function () {
       h3.innerText = "Time: " + ++countTime;
@@ -203,9 +204,9 @@ function init() {
         clearInterval(time);
       }
     }, 1000);
+    section.removeEventListener("click", timer);
   }
-  timer();
-  score();
+
   imgPlacer();
 }
 
