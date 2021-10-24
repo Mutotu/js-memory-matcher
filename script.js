@@ -27,22 +27,28 @@ const IMAGES = [
   "image24.jpg",
 ];
 
+const playBt = document.querySelector("button");
+const sectionAll = document.querySelector("section");
+///////
 let h2 = document.querySelector("h2");
 let h3 = document.querySelector("h3");
 let section = document.querySelector("section");
 section.addEventListener("click", () => console.log(section));
-const playBt = document.querySelector("button");
-const sectionAll = document.querySelector("section");
-const harderBt = document.getElementById("harder");
+
 let sectionEls = Array.from(document.querySelectorAll("section > div"));
-let copyImages = [...IMAGES];
-let placeImages;
-let indexCollector = [];
-let counter = 0;
-let countTime = 0;
-let move = 1;
+
+/////////
+
+////////
 function init() {
-  placeImages = randomPhotoGenerator(copyImages);
+  let copyImages = [...IMAGES];
+  // let placeImages;
+  let placeImages = randomPhotoGenerator(copyImages);
+  let indexCollector = [];
+  let counter = 0;
+  let countTime = 0;
+  let move = 1;
+
   function randomPhotoGenerator(array) {
     let counter = array.length / 2;
     let random = 0;
@@ -123,6 +129,11 @@ function init() {
     let audio = new Audio("ELGUITAR.wav");
     audio.play();
   }
+  playBt.addEventListener("click", function () {
+    console.log("button");
+    // window.init();
+    window.location.reload();
+  });
   imgPlacer();
 }
 
