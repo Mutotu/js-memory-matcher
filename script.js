@@ -80,16 +80,17 @@ function init() {
   function checkMatch() {
     let item1 = document.getElementById(indexCollector[0]);
     let item2 = document.getElementById(indexCollector[1]);
-
+    item1.setAttribute("disabled", true);
+    // item2.setAttribute("disabled", true);
     if (indexCollector.length === 2) {
       moves();
       move++;
-      item1.setAttribute("disabled", true);
-      item2.setAttribute("disabled", true);
+
       if (item1.getAttribute("name") === item2.getAttribute("name")) {
         counter++;
         audio();
-
+        item1.setAttribute("disabled", true);
+        item2.setAttribute("disabled", true);
         indexCollector = [];
       } else {
         item1.removeAttribute("disabled");
