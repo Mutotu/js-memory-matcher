@@ -15,8 +15,8 @@ body {
 /* vmin scales accoidng to the size */
 section {
   display: grid;
-  grid-template-columns: repeat(6, 18vmin);
-  grid-template-rows: repeat(4, 18vmin);
+  grid-template-columns: repeat(6, 14vmin);
+  grid-template-rows: repeat(4, 14vmin);
   gap: 0.5vmin;
 }
 
