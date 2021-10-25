@@ -1,4 +1,4 @@
-"use strcit";
+"use strict";
 
 const IMAGES = [
   "image1.jpg",
@@ -28,12 +28,12 @@ const IMAGES = [
 ];
 
 const playBt = document.querySelector("button");
-const sectionAll = document.querySelector("section");
+// const sectionAll = document.querySelector("section");
 ///////
 let h2 = document.querySelector("h2");
 let h3 = document.querySelector("h3");
 let section = document.querySelector("section");
-section.addEventListener("click", () => console.log(section));
+// section.addEventListener("click", () => console.log(section));
 
 let sectionEls = Array.from(document.querySelectorAll("section > div"));
 
@@ -42,7 +42,7 @@ let sectionEls = Array.from(document.querySelectorAll("section > div"));
 ////////
 function init() {
   let copyImages = [...IMAGES];
-  // let placeImages;
+
   let placeImages = randomPhotoGenerator(copyImages);
   let indexCollector = [];
   let counter = 0;
@@ -130,8 +130,6 @@ function init() {
     audio.play();
   }
   playBt.addEventListener("click", function () {
-    console.log("button");
-    // window.init();
     window.location.reload();
   });
   imgPlacer();
