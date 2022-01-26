@@ -27,7 +27,8 @@ const IMAGES = [
   "image24.jpg",
 ];
 
-const playBt = document.querySelector("button");
+const playBt = document.querySelector("#replay");
+const againstComp = document.querySelector("#against");
 // const sectionAll = document.querySelector("section");
 ///////
 let h2 = document.querySelector("h2");
@@ -42,7 +43,9 @@ let sectionEls = Array.from(document.querySelectorAll("section > div"));
 ////////
 function init() {
   let copyImages = [...IMAGES];
-
+  let player = "";
+  let person = 0;
+  let computer = 1;
   let placeImages = randomPhotoGenerator(copyImages);
   let indexCollector = [];
   let counter = 0;
@@ -133,6 +136,9 @@ function init() {
     window.location.reload();
   });
   imgPlacer();
+
+  againstComp.addEventListener("click", computerPlaying);
+  function computerPlaying() {}
 }
 
 init();

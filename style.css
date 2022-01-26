@@ -26,6 +26,11 @@ section {
 /* This selects the div elements */
 section > div {
   border: 1vmin solid grey;
+  cursor: pointer;
+  border-radius: 3px;
+}
+section > div:hover {
+  border: 2px solid rgb(119, 48, 0);
 }
 button {
   margin-top: 2vmin;
